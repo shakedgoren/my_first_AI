@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Welcome to my first AI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo">
+     
+        <a href="index.html">My first AI</a></h1>
+ 
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto " href="/public">Home</a></li>
+            <li><a class="nav-link scrollto" href="/public/predictions.html">Predictions</a></li>
+            <li><a class="nav-link scrollto active" href="/public/add.html">Add new data</a></li>
+            <li><a class="nav-link scrollto" href="/public/learn.html" onclick="learnP()">Learn the AI</a></li>
+            <li><a class="nav-link scrollto" href="/public/contact.html">Contact</a></li>
+            <li><a class="getstarted scrollto" href="/public/predictions.html">Get Started</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+  </header>
+
+  <div id="services">
+    <section id="hero">
+      <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-item active" style="background-image: url(assets/img/new.jpeg);">
+              <div class="carousel-container">
+                <div class="carousel-content"><br/><br/><br/><br/>
+                  <h2 class="animate__animated animate__fadeInDown">ADD NEW DATA</h2>
+                  <p class="animate__animated animate__fadeInUp">If you would like to help increase the accuracy of the probabilities, please add the information you have and learn the AI.</p>
+                  <h1 style="color: white; content: '\f244';text-decoration: underline;">Please enter your details</h1><br/>
+                  <row style="color: white;">
+                  <form method="POST" action="">
+                      <col>
+                        <h4>Your Age:</h4>
+                        <div class="form-group">
+                        <p> <label>
+                          <input style="width: 150px; height: 40px;" type="number" value="20" min="0" max="100" name="age" id="age"/>
+                      </label></p></div>
+                      </col>
+                      <col>
+                      <div class="form-group">
+                        <h4>Your Gender:</h4>
+                        <p> <select class="form-select" id="gender" name="gender" aria-label="gender">
+                          <option selected disabled>select:</option>
+                          <option value=0>Male</option>
+                          <option value=1>Female</option>
+                        </select></p></div>
+                      </col>
+                      <col>
+                      <div class="form-group">
+                        <h4>The number of children you have</h4>
+                        <p> <select class="form-select" id="children" name="children" aria-label="children">
+                          <option selected disabled>select:</option>
+                          <option value=0>0</option>
+                          <option value=1>1</option>
+                          <option value=2>2</option>
+                          <option value=3>3</option>
+                          <option value=4>4</option>
+                          <option value=5>5</option>
+                          <option value=6>6</option>
+                          <option value=7>7</option>
+                          <option value=8>8</option>
+                          <option value=9>9</option>
+                          <option value=10>10</option>
+                        </select></p></div>
+                        <br/>
+                      </col>
+                      <row>
+                        <div class="form-group">
+                        <a type="button" onclick="addP()" class="">Add My Data</a>
+                      </div>
+                      </row>
+                      </form>
+                    </row>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+
+  <div id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Shaked Goren</h3>
+              <p>
+                Full-stack Developer<br/>
+                Yavne, Israel<br>
+                <strong>Phone:</strong> 052-2884992<br>
+                <strong>Email:</strong> shaked.goren15@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const MY_SERVER = 'http://127.0.0.1:5000'
+      const addP = async () => {
+          const res = await axios.post(MY_SERVER + '/add' ,{"age":age.value,"gender": gender.value,"children": children.value}).then(res=> console.log(res.msg))
+      }
+      const learnP = async () => {
+          const res = await axios.get(MY_SERVER + '/learn').then(res=> console.log("learnd"))
+      }
+    </script>
+    </script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

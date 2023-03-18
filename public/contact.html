@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Welcome to my first AI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo">
+     
+        <a href="index.html">My first AI</a></h1>
+ 
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto " href="/public/index.html">Home</a></li>
+            <li><a class="nav-link scrollto" href="/public/predictions.html">Predictions</a></li>
+            <li><a class="nav-link scrollto" href="/public/add.html">Add new data</a></li>
+            <li><a class="nav-link scrollto" href="/public/learn.html" onclick="learnP()">Learn the AI</a></li>
+            <li><a class="nav-link scrollto active" href="/public/contact.html">Contact</a></li>
+            <li><a class="getstarted scrollto" href="/public/predictions.html">Get Started</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+  </header>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title"><br/><br/><br/><br/>
+        <h2>CONTACT</h2>
+        <p>If you liked my work, I have many more abilities. Contact me about work!</p>
+      </div>
+      <div class="row contact-info">
+        <div class="col-md-4">
+          <div class="contact-address">
+            <i class="bi bi-geo-alt"></i>
+            <h3>Address</h3>
+            <address>Israel</address>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-phone">
+            <i class="bi bi-phone"></i>
+            <h3>Phone Number</h3>
+            <p>052-2884992</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-email">
+            <i class="bi bi-envelope"></i>
+            <h3>Email</h3>
+            <p>shaked.goren15@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Shaked Goren</h3>
+              <p>
+                Full-stack Developer<br/>
+                Yavne, Israel<br>
+                <strong>Phone:</strong> 052-2884992<br>
+                <strong>Email:</strong> shaked.goren15@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+  <script>
+    const MY_SERVER = 'http://127.0.0.1:5000/learn'
+
+    const learnP = async () => {
+        const res = await axios.get(MY_SERVER).then(res=> console.log(res.msg))
+    }
+  </script>
+
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
